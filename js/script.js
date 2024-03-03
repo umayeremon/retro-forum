@@ -49,7 +49,7 @@ const displayCard= cards=>{
         </div>
       </div>
       <div class=" absolute right-0 lg:right-2 top-0 lg:top-auto lg:bottom-4">
-        <button onclick="handleShowData('${card.title.replace(/'/g,'')}', ${card.view_count})" class="btn"><img src="images/Icon/email 1.svg" alt=""></button>
+        <button onclick="handleShowData('${card.title.replace(/'/g,'@')}', ${card.view_count})" class="btn"><img src="images/Icon/email 1.svg" alt=""></button>
       </div>
     </div>
     `
@@ -64,7 +64,7 @@ const displayCard= cards=>{
 // show data handler
 let count=0;
 const handleShowData=(title, viewCount)=>{
-  const cardTitle=title;
+  const cardTitle=title.replace(/@/g,"'");
   const cardViewCount=viewCount;
   console.log(cardTitle, cardViewCount);
   const readContainer=document.getElementById("read-container");
