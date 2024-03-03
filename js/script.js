@@ -55,7 +55,7 @@ const displayCard= cards=>{
     </div>
     `
     mainCardContainer.appendChild(cardContainer);
-    console.log(card)
+    // console.log(card)
   })
   
 }
@@ -70,5 +70,48 @@ const handleSearch=async()=>{
 }
 
 
+// loading latest card
+const loadLatestCard=async()=>{
+  const res= await fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts");
+  const data= await res.json();
+  // console.log(data[0])
+  displayLatestCard(data)
+}
 
+// display latest card
+const displayLatestCard= data=>{
+
+  const latestCardMainContainer=document.getElementById("latest-card-main-container")
+  data.forEach(data=>{
+    console.log(data);
+
+    const latestCardContainer=document.createElement("div");
+    latestCardContainer.classList=`card bg-base-100 border border-[#12132D26] rounded-xl p-2 mx-2 lg:mx-0`;
+    latestCardContainer.innerHTML=`
+    <div class="px-4 pt-4">
+      <img src="${data.cover_image}" alt="" class="rounded-xl w-full" />
+    </div>
+    <div class=" flex flex-row gap-2 pt-4 pl-4 items-center">
+      <img src="images/Icon/date.svg" alt="">
+      <p class="text-sm text-[#12132D99]">${data?.author?.posted_date|| "No publish date"}</p>
+    </div>
+    <div class=" ml-4 mt-2 items-start space-y-2">
+      <h2 class="text-lg lg:text-xl font-extrabold text-[#12132D]">${data.title}</h2>
+      <p class="text-sm lg:text-base text-[#12132D99]">${data?.description}</p>
+    <div class="card-actions space-x-4 pt-2">
+      <img src="${data?.profile_image}" alt="" class="w-12 lg:w-16 rounded-full ">
+      <div>
+        <h4 class="text-base lg:text-xl text-[#12132D] font-bold">${data.author.name}</h4>
+        <p class="text-sm lg:text-base text-[#12132D99]">${data?.author?.designation ||"Unknown"}</p>
+      </div>
+    </div>
+      </div>
+    `
+    latestCardMainContainer.appendChild(latestCardContainer);
+  })
+}
+
+
+
+loadLatestCard();
 loadCard();
