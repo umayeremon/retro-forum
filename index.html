@@ -61,9 +61,9 @@
         <h1 class="text-4xl lg:text-7xl text-white font-black"><span class="text-[#797DFC]">RaDix</span> Forum</h1>
         <p class="text-white font-medium text-sm lg:text-xl">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
         <div class="relative">
-          <input type="text" value="" placeholder="Search here anything" class="p-2 lg:p-4 rounded-2xl lg:rounded-3xl outline-none w-[96%] lg:w-[62%] h-14 lg:h-16 text-xs lg:text-xl"> 
+          <input id="search-input-field" type="text" value="" placeholder="Search here anything" class="p-2 lg:p-4 rounded-2xl lg:rounded-3xl outline-none w-[96%] lg:w-[62%] h-14 lg:h-16 text-xs lg:text-xl"> 
           <div class="absolute right-5 lg:right-72 top-1 lg:top-2">
-            <button class="btn bg-[#797DFC] hover:bg-[#797DFC] text-white text-sm lg:text-xl font-bold px-4 lg:px-8 py-0 lg:py-2 rounded-2xl lg:rounded-3xl border-none">Search</button>
+            <button onclick="handleSearch()" class="btn bg-[#797DFC] hover:bg-[#797DFC] text-white text-sm lg:text-xl font-bold px-4 lg:px-8 py-0 lg:py-2 rounded-2xl lg:rounded-3xl border-none">Search</button>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@
     <!-- Let’s Discuss section -->
     <section class="my-16">
       <h2 class="font-black text-5xl text-[#12132D] text-center">Let's Discuss</h2>
-      <p class="text-[#12132D99] text-xl text-center my-4">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined.</p>
+      <p class="text-[#12132D99] text-xl text-center my-4">Engage in current conversations! Join our Latest Discussions to participate in active discourse, <br> share insights, and connect with others on diverse topics of interest and importance.</p>
 
       <div class=" flex flex-col lg:flex-row gap-8">
         <!-- left side -->
@@ -138,9 +138,58 @@
         
       </div>
     </section>
+
+    <!-- Latest Posts section -->
+    <section class="my-16">
+      <h2 class="font-black text-5xl text-[#12132D] text-center">Latest Posts</h2>
+      <p class="text-[#12132D99] text-xl text-center my-4">Stay informed with our latest updates! Explore our Latest Posts section for the most recent articles, news, <br> and insights on a wide range of topics that matter to you.</p>
+
+      <div class="flex flex-col lg:flex-row">
+      <div class="card w-96 bg-base-100 border border-[#12132D26] rounded-xl p-2">
+        <div class="px-4 pt-4">
+          <img src="images/pexels-jeshootscom-442576.jpg" alt="Shoes" class="rounded-xl w-full" />
+        </div>
+        <div class=" flex flex-row gap-2 pt-4 pl-4">
+          <img src="images/Icon/date.svg" alt="">
+          <p class="text-xltext-[#12132D99]">29 January 2024</p>
+        </div>
+        <div class=" ml-4 mt-2 items-start space-y-2">
+        <h2 class="text-xl font-extrabold text-[#12132D]">What will a mars habitat force that impact in our daily life!!!</h2>
+        <p class="text-lg text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
+        <div class="card-actions space-x-4">
+            <img src="images/pexels-davide-de-giovanni-1649675.jpg" alt="" class="w-16 rounded-full ">
+            <div>
+              <h4 class="text-xl text-[#12132D] font-bold">Cameron Williamson</h4>
+              <p class="text-base text-[#12132D99]">Unknown</p>
+            </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </section>
   </main>
     
-  <footer>
+  <footer class="footer footer-center p-8 lg:p-40 bg-[#12132D0D] text-primary-content text-black">
+    <div class="border-dashed border-b-2 border-gray-300 pb-6 lg:pb-12">
+      <aside class="space-y-2 lg:space-y-8">
+        <h2 class="btn btn-ghost text-4xl  lg:text-7xl font-black text-[#12132D]">RaDix</h2>
+        <p class="font-bold text-[#12132DB2] text-xs lg:text-xl">
+          "ReDix Forum: Engage, share, and learn. Join our vibrant community to discuss industry trends,  seek <br>advice, and connect with peers. Fuel your knowledge and collaboration with ReDix Forum."
+        </p> 
+      </aside> 
+      <nav class="mt-3 lg:mt-6">
+        <div class="grid grid-flow-col gap-4">
+        <a href="https://twitter.com/"   target="_blank"><img src="images/Icon/twitter.svg" alt=""  class="w-4 lg:w-8" ></a>
+        <a href="https://facebook.com/"  target="_blank"><img src="images/Icon/facebook.svg" alt="" class="w-4 lg:w-8" ></a>
+        <a href="https://instagram.com/" target="_blank"><img src="images/Icon/insta.svg" alt=""    class="w-4 lg:w-8" ></a>
+        <a href="https://github.com/"    target="_blank"><img src="images/Icon/github.svg" alt=""   class="w-4 lg:w-8" ></a>
+        </div>
+      </nav>
+    </div>
+
+    <div>
+      <p class="text-sm lg:text-xl text-[#12132D80]">2024, All Rights Reserved.</p>
+    </div>
     
   </footer>
 <script src="js/script.js"></script>

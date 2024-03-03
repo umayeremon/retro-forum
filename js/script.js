@@ -1,14 +1,17 @@
-const loadCard=async()=>{
-  const res=await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+// loading card
+const loadCard=async(searchText='')=>{
+  const res=await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
   const posts=await res.json();
   const cards=posts.posts;
-  console.log(cards);
   displayCard(cards);
 }
 
+// display card
 const displayCard= cards=>{
-  const mainCardContainer=document.getElementById("main-card-container")
+  const mainCardContainer=document.getElementById("main-card-container");
+  mainCardContainer.textContent='';
   cards.forEach(card=>{
+    // circle
     let circle='';
     if(card.isActive){
       circle= `<div id="red-circle" class="w-3 h-3 bg-green-600 rounded-full absolute right-[-3px] top-[-3px]"></div>`
@@ -16,6 +19,7 @@ const displayCard= cards=>{
     else{
       circle=`<div id="red-circle" class="w-3 h-3 bg-red-600 rounded-full absolute right-[-3px] top-[-3px]"></div>`
     }
+
     const cardContainer=document.createElement("div");
     cardContainer.classList=`card card-side bg-[#797DFC1A]  p-6`;
     cardContainer.innerHTML=`
@@ -50,13 +54,20 @@ const displayCard= cards=>{
       </div>
     </div>
     `
-    mainCardContainer.appendChild(cardContainer)
-
+    mainCardContainer.appendChild(cardContainer);
     console.log(card)
   })
+  
 }
 
 
+// handle search
+const handleSearch=async()=>{
+  const inputSearchField=document.getElementById("search-input-field");
+  const searchText=inputSearchField.value;
+  console.log(searchText);
+  loadCard(searchText)
+}
 
 
 
