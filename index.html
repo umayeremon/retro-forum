@@ -38,15 +38,19 @@
         </div>
         <div class="flex-1 hidden lg:flex">
           <ul class=" px-1 space-x-4 flex flex-row justify-end w-full">
-            <li><button class="btn" title="Home"><img src="images/Icon/Home.svg" alt="Home"></button></li>
-            <li><button class="btn" title="Edit"><img src="images/Icon/Edit.svg" alt="Edit"></button></li>
-            <li><button class="btn" title="Add"><img src="images/Icon/Add.svg" alt="Add"></button></li>
-            <li><button class="btn" title="Language"><img src="images/Icon/Flag.svg" alt="Language" ></button></li>
-            <div>
-              
-            </div>
+            <li><div class="tooltip hover:tooltip-open tooltip-bottom" data-tip="Home">
+                <button class="btn"><img src="images/Icon/Home.svg" alt="Home"></button></div>
+            </li>
+            <li><div class="tooltip hover:tooltip-open tooltip-bottom" data-tip="Edit">
+                <button class="btn"><img src="images/Icon/Edit.svg" alt="Edit"></button></div>
+            </li>
+            <li><div class="tooltip hover:tooltip-open tooltip-bottom" data-tip="Add">
+                <button class="btn"><img src="images/Icon/Add.svg" alt="Add"></button></div>
+            </li>
+            <li><div class="tooltip hover:tooltip-open tooltip-bottom" data-tip="Language">
+                <button class="btn"><img src="images/Icon/Flag.svg" alt="Flag"></button></div>
+            </li>
           </ul>
-          
         </div>
         <div>
           <button class="btn bg-[#797DFC] hover:bg-[#797DFC] text-white text-sm lg:text-2xl font-bold px-4 lg:px-8 py-0 lg:py-4 h-full rounded-2xl lg:rounded-3xl ml-8">Sign In</button>

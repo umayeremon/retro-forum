@@ -54,7 +54,6 @@ const displayCard= cards=>{
     </div>
     `
     mainCardContainer.appendChild(cardContainer);
-    // console.log(card)
     
   })
   setTimeout( ()=> {
@@ -116,11 +115,8 @@ const loadLatestCard=async()=>{
 
 // display latest card
 const displayLatestCard= data=>{
-
-  const latestCardMainContainer=document.getElementById("latest-card-main-container")
+const latestCardMainContainer=document.getElementById("latest-card-main-container")
   data.forEach(data=>{
-    // console.log(data);
-
     const latestCardContainer=document.createElement("div");
     latestCardContainer.classList=`card bg-base-100 border border-[#12132D26] rounded-xl p-2 mx-2 lg:mx-0`;
     latestCardContainer.innerHTML=`
@@ -146,7 +142,6 @@ const displayLatestCard= data=>{
     latestCardMainContainer.appendChild(latestCardContainer);
   })
 }
-
 
 
 loadLatestCard();
