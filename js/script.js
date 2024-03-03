@@ -48,8 +48,8 @@ const displayCard= cards=>{
           <p class="text-sm lg:text-xl text-[#12132D99]">${card.posted_time} min</p>
         </div>
       </div>
-      <div class=" absolute right-0 lg:right-2 top-0 lg:top-auto lg:bottom-4">
-        <button onclick="handleShowData('${card.title.replace(/'/g,'@')}', ${card.view_count})" class="btn"><img src="images/Icon/email 1.svg" alt=""></button>
+      <div class=" absolute right-2 lg:right-4 top-1 lg:top-auto lg:bottom-2">
+        <button onclick="handleShowData('${card.title.replace(/'/g,'@')}', ${card.view_count})"><img src="images/Icon/email 1.svg" alt=""></button>
       </div>
     </div>
     `
