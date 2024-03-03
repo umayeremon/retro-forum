@@ -19,7 +19,6 @@ const displayCard= cards=>{
     else{
       circle=`<div id="red-circle" class="w-3 h-3 bg-red-600 rounded-full absolute right-[-3px] top-[-3px]"></div>`
     }
-
     const cardContainer=document.createElement("div");
     cardContainer.classList=` flex flex-col lg:flex-row rounded-xl relative  bg-[#797DFC1A]  p-6`;
     cardContainer.innerHTML=`
@@ -50,31 +49,68 @@ const displayCard= cards=>{
         </div>
       </div>
       <div class=" absolute right-0 lg:right-2 top-0 lg:top-auto lg:bottom-4">
-        <button class="btn"><img src="images/Icon/email 1.svg" alt=""></button>
+        <button onclick="handleShowData('${card.title.replace(/'/g,'')}', ${card.view_count})" class="btn"><img src="images/Icon/email 1.svg" alt=""></button>
       </div>
     </div>
     `
     mainCardContainer.appendChild(cardContainer);
     // console.log(card)
+    
   })
-  
+  setTimeout( ()=> {
+    loadingSpinner(false)
+  }, 2000);
+}
+
+// show data handler
+let count=0;
+const handleShowData=(title, viewCount)=>{
+  const cardTitle=title;
+  const cardViewCount=viewCount;
+  console.log(cardTitle, cardViewCount);
+  const readContainer=document.getElementById("read-container");
+  const countContainer=document.getElementById("count");
+  const markReadContainer=document.createElement("div");
+  markReadContainer.classList=`flex flex-row bg-white px-6 lg:px-8 py-4 gap-4 rounded-xl`;
+  markReadContainer.innerHTML=`
+  <p class=" text-sm lg:text-lg font-semibold text-[#12132D]">${cardTitle}</p>
+  <div class="flex flex-row items-center">
+    <img src="images/Icon/eye.svg" alt="">
+    <p  class="text-xs lg:text-lg text-[#12132D99]">${cardViewCount}</p>
+  </div>
+  `
+  readContainer.appendChild(markReadContainer);
+  count= count+1;
+  countContainer.innerText=count;
+  console.log(count)
 }
 
 
+
+// loading spinner
+const loadingSpinner=(spinner)=>{
+  const spinnerContainer=document.getElementById("loading-spinner");
+  if(spinner){
+    spinnerContainer.classList.remove("hidden");
+  }
+  else{
+    spinnerContainer.classList.add("hidden");
+  }
+}
+
 // handle search
 const handleSearch=async()=>{
+  loadingSpinner(true)
   const inputSearchField=document.getElementById("search-input-field");
   const searchText=inputSearchField.value;
   console.log(searchText);
   loadCard(searchText)
 }
 
-
 // loading latest card
 const loadLatestCard=async()=>{
   const res= await fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts");
   const data= await res.json();
-  // console.log(data[0])
   displayLatestCard(data)
 }
 
@@ -83,7 +119,7 @@ const displayLatestCard= data=>{
 
   const latestCardMainContainer=document.getElementById("latest-card-main-container")
   data.forEach(data=>{
-    console.log(data);
+    // console.log(data);
 
     const latestCardContainer=document.createElement("div");
     latestCardContainer.classList=`card bg-base-100 border border-[#12132D26] rounded-xl p-2 mx-2 lg:mx-0`;

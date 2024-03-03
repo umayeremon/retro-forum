@@ -58,8 +58,8 @@
     <div class="hero p-8 lg:p-24 mx-2 my-2 lg:my-4 h-full w-[96%] lg:w-full rounded-3xl bg-[url('/images/bgbanner.png')] bg-[#12132D] flex flex-col lg:flex-row">
       <div class="space-y-4 lg:space-y-6 flex-auto">
         <h1 class="text-4xl lg:text-6xl text-white font-black">Welcome to the </h1>
-        <h1 class="text-4xl lg:text-6xl text-white font-black"><span class="text-[#797DFC]">RaDix</span> Forum</h1>
-        <p class="text-white font-medium text-sm lg:text-xl">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+        <h1 class="text-4xl lg:text-6xl text-white font-black"><span class="text-[#797dfca1]">RaDix</span> Forum</h1>
+        <p class="text-white font-medium text-sm text-center lg:text-left lg:text-xl">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
         <div class="relative">
           <input id="search-input-field" type="text" value="" placeholder="Search here anything" class="p-2 lg:p-4 rounded-2xl lg:rounded-3xl outline-none w-[96%] lg:w-[62%] h-14 lg:h-16 text-xs lg:text-xl"> 
           <div class="absolute right-5 lg:right-60 top-1 lg:top-2">
@@ -94,6 +94,10 @@
     <section class="mb-12">
       <h2 class="font-black text-3xl lg:text-5xl text-[#12132D] text-center">Let's Discuss</h2>
       <p class="text-[#12132D99] text-xs lg:text-lg text-center my-4">Engage in current conversations! Join our Latest  Discussions to participate in active discourse,  share insights,<br> and connect with others on diverse topics of interest and importance.</p>
+       <!-- loading spinner -->
+       <div id="loading-spinner" class="text-center hidden">
+        <span class="loading loading-spinner loading-md"></span>
+      </div>
 
       <div class=" flex flex-col lg:flex-row gap-8 mx-2 lg:mx-0">
         <!-- left side -->
@@ -107,18 +111,10 @@
           <h4 class="text-xl lg:text-2xl font-bold text-[#12132D] basis-2/5">Title</h4>
           <div class="flex flex-row justify-center items-center basis-3/5">
             <img src="images/Icon/right.svg" alt="" class="w-4 lg:w-auto">
-            <p class="text-xs lg:text-xl text-[#12132D99]">Mark as read (<span>0</span>)</p>
+            <p class="text-xs lg:text-xl text-[#12132D99]">Mark as read (<span id="count">0</span>)</p>
           </div>
         </div>
-
-        <div class="flex flex-col mt-4 space-y-4">
-          <div class="flex flex-row bg-white px-6 lg:px-8 py-4 gap-4 rounded-xl">
-            <p class=" text-sm lg:text-lg font-semibold text-[#12132D]">10 Kids Unaware of Their Halloween Costume</p>
-            <div class="flex flex-row items-center">
-              <img src="images/Icon/eye.svg" alt="">
-              <p  class="text-xs lg:text-lg text-[#12132D99]">1568</p>
-            </div>
-          </div>
+        <div id="read-container" class="flex flex-col mt-4 space-y-4">
         </div>
         </div>
       </div>
